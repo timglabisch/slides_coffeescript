@@ -229,7 +229,6 @@ a
                 -->
             </div>
 
-
             <div class="slides">
                 <section>
                     <div class="editor">
@@ -343,7 +342,7 @@ a = (cb) -> cb? "data"
                     <div class="editor">
                         <div class="window left" data-lang="coffee">
                             <div class="code">
-$('.foo').html """
+$('._foo').html """
    <a href="#{getRouter().url 'user', user.id}">
        <img src="#{getUserImageService()getImage(user).getSrc()}"/>
    </a>
@@ -427,14 +426,13 @@ add("Why am I a ", typeof + "");
                 -->
             </div>
 
-
             <div class="slides">
                 <section>
                     <div class="editor">
                         <div class="window left" data-lang="coffee">
                             <div class="code">
-$(document).ready(function() {
-    $("body").removeClass("noscript")
+$(_document).ready(function() {
+    $("_body").removeClass("noscript")
 });
                             </div>
                             <div class="res"></div>
@@ -452,8 +450,6 @@ $(document).ready(function() {
                     Keine komplexen Proxies wie z.b. bei Dart / GWT nötig
                 -->
             </div>
-
-
 
 
 
