@@ -711,7 +711,7 @@ x 38
                     <div class="editor">
                         <div class="window left" data-lang="coffee">
                             <div class="code">
-$('#dialog').dialog()
+$('#_dialog').dialog()
                             </div>
                             <div class="res"></div>
                         </div>
@@ -856,10 +856,10 @@ a.foo()
                     <div class="editor">
                         <div class="window left" data-lang="coffee">
                             <div class="code">
-$('#element').click(function(){
+$('#_element').click(function(){
     var that = this;
 
-    $('.elements').each(function(i, v){
+    $('._elements').each(function(i, v){
         that.doSomething(v);
     });
 });
@@ -880,8 +880,8 @@ $('#element').click(function(){
                     <div class="editor">
                         <div class="window left" data-lang="coffee">
                             <div class="code">
-$('#element').click ->
-    $('.elements').each (i, v) =>
+$('#_element').click ->
+    $('._elements').each (i, v) =>
         @doSomething v
                             </div>
                             <div class="res"></div>
