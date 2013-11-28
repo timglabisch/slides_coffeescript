@@ -301,7 +301,7 @@ document.a?.b = c
                     <div class="editor">
                         <div class="window left" data-lang="coffee">
                             <div class="code">
-document.a ?= c
+console.log "up" if console? and console.log?
                             </div>
                             <div class="res"></div>
                         </div>
@@ -311,6 +311,69 @@ document.a ?= c
                         </div>
                     </div>
 
+                </section>
+                <!--
+                    oder einfach nur console?.log?
+                -->
+            </div>
+
+            <div class="slides">
+                <section>
+                    <div class="editor">
+                        <div class="window left" data-lang="coffee">
+                            <div class="code">
+a = (cb) -> cb? "data"
+                            </div>
+                            <div class="res"></div>
+                        </div>
+                        <div class="window right" data-lang="javascript">
+                            <div class="code"></div>
+                            <div class="res"></div>
+                        </div>
+                    </div>
+
+                </section>
+                <!--
+                    oder einfach nur console?.log?
+                -->
+            </div>
+
+            <div class="slides">
+                <section>
+                    <div class="editor">
+                        <div class="window left" data-lang="coffee">
+                            <div class="code">
+$('.foo').html """
+   <a href="#{getRouter().url 'user', user.id}">
+       <img src="#{getUserImageService()getImage(user).getSrc()}"/>
+   </a>
+"""
+                            </div>
+                            <div class="res"></div>
+                        </div>
+                        <div class="window right" data-lang="javascript">
+                            <div class="code"></div>
+                            <div class="res"></div>
+                        </div>
+                    </div>
+
+                </section>
+            </div>
+
+            <div class="slides">
+                <section>
+                    <div class="editor">
+                        <div class="window left" data-lang="coffee">
+                            <div class="code">
+document.a ?= c
+                            </div>
+                            <div class="res"></div>
+                        </div>
+                        <div class="window right" data-lang="javascript">
+                            <div class="code"></div>
+                            <div class="res"></div>
+                        </div>
+                    </div>
                 </section>
             </div>
 
