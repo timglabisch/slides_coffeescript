@@ -83,7 +83,7 @@
 
             <div class="slides">
                 <section>
-                    <h1>CoffeeScript</h1>
+                    <h1>npm install -g CoffeeScript</h1>
                 </section>
             </div>
 
@@ -120,15 +120,47 @@
                         compile to JavaScript
                     </h2>
                 </section>
+                <!--
+                    Am Anfang die gewohnte Frage, ....
+
+                    Wer nutzt CoffeeScript?
+
+                    Wer nutzt Javascript?
+
+                    Wer scheibt oop Javascript?
+
+                    Wer nutzt Gwt, Dart, Typescript, ...
+                -->
             </div>
+
+            <div class="slides">
+                <section>
+                    <h2>
+                        Coffeescript Basic's
+                    </h2>
+                    <p class="fragment">
+                        syntax und so.
+                    </p>
+                </section>
+                <!--
+                    Wer will eine langweilige Wikipedia-Einführung in Coffeescript hören?
+
+                    Ich übersetze die folgenden Statements in Coffeescript
+
+                    Im Anschluss erzähl ich vielleicht ein wenig Historie :)
+                -->
+            </div>
+
+
+
 
             <div class="slides">
                 <section>
                     <div class="editor">
                         <div class="window left" data-lang="coffee">
                             <div class="code">
-var love = "code";
-love
+var \u1000 = "\u1011";
+က
                             </div>
                             <div class="res"></div>
                         </div>
@@ -138,7 +170,65 @@ love
                         </div>
                     </div>
                 </section>
+                <!--
+
+                    Editor:
+                        output unten
+                        erkennt ob javascript
+                        wenn coffeescript, javascript rechts daneben
+
+                    Kein var Statement!
+
+                    Coffeescript hat einen scope aware parser, anders als php, c, js, ...
+                    Coffeescript erkennt, dass var noch nicht deklariert ist
+
+
+                    Resultat:
+
+                    foo = "bar"
+                -->
             </div>
+
+            <div class="slides">
+                <section>
+                    <div class="editor">
+                        <div class="window left" data-lang="coffee">
+                            <div class="code">
+var a = 0;
+if(0 === -0) {
+    a = 1;
+}
+
+a
+                            </div>
+                            <div class="res"></div>
+                        </div>
+                        <div class="window right" data-lang="javascript">
+                            <div class="code"></div>
+                            <div class="res"></div>
+                        </div>
+                    </div>
+                </section>
+                <!--
+
+                    if 0 == -0
+                        a = 1
+
+
+                    Oder:
+                    a = 1 if 0 is -0
+
+                    Oder:
+                    0 is -0 && a = 1
+
+                    ACHTUNG
+                    if Statement gibt was zurück!
+                    bei coffeescript gibt alles etwas zurück :)
+
+
+                -->
+            </div>
+
 
             <div class="slides">
                 <section>
@@ -160,6 +250,197 @@ THERE IS ( NO (
                             <div class="res"></div>
                         </div>
                     </div>
+                    <!--
+                    Syntax ist wenig überraschend
+                    Syntax lässt sich mischen
+                    Syntax ist sehr gnädig (letztes Beispiel)
+                    -->
+                </section>
+            </div>
+
+            <div class="slides">
+                <section>
+                    <div class="editor">
+                        <div class="window left" data-lang="coffee">
+                            <div class="code">
+->->->->->5
+                            </div>
+                            <div class="res"></div>
+                        </div>
+                        <div class="window right" data-lang="javascript">
+                            <div class="code"></div>
+                            <div class="res"></div>
+                        </div>
+                    </div>
+                    <!--
+                    Funktionen definieren
+                    -->
+                </section>
+            </div>
+
+            <div class="slides">
+                <section>
+                    <div class="editor">
+                        <div class="window left" data-lang="coffee">
+                            <div class="code">
+document.a?.b = c
+                            </div>
+                            <div class="res"></div>
+                        </div>
+                        <div class="window right" data-lang="javascript">
+                            <div class="code"></div>
+                            <div class="res"></div>
+                        </div>
+                    </div>
+
+                </section>
+            </div>
+
+            <div class="slides">
+                <section>
+                    <div class="editor">
+                        <div class="window left" data-lang="coffee">
+                            <div class="code">
+document.a ?= c
+                            </div>
+                            <div class="res"></div>
+                        </div>
+                        <div class="window right" data-lang="javascript">
+                            <div class="code"></div>
+                            <div class="res"></div>
+                        </div>
+                    </div>
+
+                </section>
+            </div>
+
+            <div class="slides">
+                <section>
+                    <div class="editor">
+                        <div class="window left" data-lang="coffee">
+                            <div class="code">
+function add(a, b) {
+    return a + b;
+}
+
+add("Why am I a ", typeof + "");
+                            </div>
+                            <div class="res"></div>
+                        </div>
+                        <div class="window right" data-lang="javascript">
+                            <div class="code"></div>
+                            <div class="res"></div>
+                        </div>
+                    </div>
+
+                    <!--
+                        Etwas komplizierteres beispiel
+                        - was entfernen damit Syntaktisch noch korrekt?
+                        - ;
+                        - return
+                        - function
+                        - {
+                        - (
+                        + =
+                        + ->
+
+                        add = (a, b) -> a + b;
+
+                        add "Why am I a ", typeof + ""
+                    -->
+
+                </section>
+                <!--
+
+                    Editor:
+                        output unten
+                        erkennt ob javascript
+                        wenn coffeescript, javascript rechts daneben
+
+                    Kein var Statement!
+
+                    Coffeescript hat einen scope aware parser, anders als php, c, js, ...
+                    Coffeescript erkennt, dass var noch nicht deklariert ist
+                -->
+            </div>
+
+
+            <div class="slides">
+                <section>
+                    <div class="editor">
+                        <div class="window left" data-lang="coffee">
+                            <div class="code">
+$(document).ready(function() {
+    $("body").removeClass("noscript")
+});
+                            </div>
+                            <div class="res"></div>
+                        </div>
+                        <div class="window right" data-lang="javascript">
+                            <div class="code"></div>
+                            <div class="res"></div>
+                        </div>
+                    </div>
+                </section>
+                <!--
+                    Coffeescript wird 1 zu 1 zu Javascript.
+                    Ihr könnt jederzeit das Coffeescript verwerfen.
+
+                    Keine komplexen Proxies wie z.b. bei Dart / GWT nötig
+                -->
+            </div>
+
+
+
+
+
+
+
+            <div class="slides">
+                <section>
+                    <h3>
+                        The golden rule of CoffeeScript is:
+                        <br/>
+                        <br/>
+                        <br/>
+                        "It's just JavaScript".
+                    </h3>
+                    <!--
+
+                    -->
+                </section>
+            </div>
+
+            <div class="slides">
+                <section>
+                    <h3>
+                        The compiled output is readable<br/> and pretty-printed, ...
+                    </h3>
+                    <!--
+
+                    -->
+                </section>
+            </div>
+
+            <div class="slides">
+                <section>
+                    <h3>
+                        will work in every<br/> JavaScript runtime, ...
+                    </h3>
+                    <!--
+
+                    -->
+                </section>
+            </div>
+
+            <div class="slides">
+                <section>
+                    <h3>
+                        ... and tends to run as fast or faster<br/> than the equivalent handwritten JavaScript.
+                    </h3>
+                    <!--
+
+                    -->
                 </section>
             </div>
 
@@ -193,8 +474,12 @@ add(someInt, add(someInt, 5));
                     <div class="editor">
                         <div class="window left" data-lang="coffee">
                             <div class="code">
-greeter = (name) -> "hello " + name
-x = (cb, arr) -> cb name for name in arr
+greeter = (name) ->
+    "hello " + name
+
+x = (cb, arr) ->
+    cb name for name in arr
+
 x(greeter, ["Andy", "Mario", "..."]).join ', '
                             </div>
                             <div class="res"></div>
@@ -204,17 +489,24 @@ x(greeter, ["Andy", "Mario", "..."]).join ', '
                             <div class="res"></div>
                         </div>
                     </div>
+                    <!--
+                        Return Statement hinzufügen!
+
+                        wo ist der unterschied?
+                        letztes Statement wird returnt!
+                        for hat eine return value!
+                    -->
                 </section>
             </div>
+
 
             <div class="slides">
                 <section>
                     <div class="editor">
                         <div class="window left" data-lang="coffee">
                             <div class="code">
-greeter = (name) -> "hello " + name
-x = (cb, arr) -> cb name for name in arr
-x(greeter, ["Andy", "Mario", "..."]).join ', '
+names = -> name for name in ["Andy", 'Maro', '...']
+names().join ', '
                             </div>
                             <div class="res"></div>
                         </div>
@@ -223,9 +515,9 @@ x(greeter, ["Andy", "Mario", "..."]).join ', '
                             <div class="res"></div>
                         </div>
                     </div>
+
                 </section>
             </div>
-
 
             <div class="slides">
                 <section>
@@ -248,13 +540,13 @@ $('meta')
                 </section>
             </div>
 
-
             <div class="slides">
-
-				<section>
+                <section>
                     <div class="editor">
                         <div class="window left" data-lang="coffee">
-                            <div class="code"></div>
+                            <div class="code">
+$('some_selector').css({top: 42, left: 42})
+                            </div>
                             <div class="res"></div>
                         </div>
                         <div class="window right" data-lang="javascript">
@@ -262,23 +554,285 @@ $('meta')
                             <div class="res"></div>
                         </div>
                     </div>
-				</section>
+                </section>
+            </div>
 
-				<section>
-					<h2>Stellar Links</h2>
-					<ul>
-						<li><a href="http://slid.es">Try the online editor</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js">Source code on GitHub</a></li>
-						<li><a href="http://twitter.com/hakimel">Follow me on Twitter</a></li>
-					</ul>
-				</section>
 
-				<section>
-					<h1>THE END</h1>
-					<h3>BY Hakim El Hattab / hakim.se</h3>
-				</section>
+            <div class="slides">
+                <section>
+                    <div class="editor">
+                        <div class="window left" data-lang="coffee">
+                            <div class="code">
+$.ajax
+    url: path
+    timeout: 5
+    data:
+        form: "workspace"
+    dataType: "jsonp"
+    success: (data) =>
+        @setXData data
+                            </div>
+                            <div class="res"></div>
+                        </div>
+                        <div class="window right" data-lang="javascript">
+                            <div class="code"></div>
+                            <div class="res"></div>
+                        </div>
+                    </div>
+                </section>
+            </div>
 
-			</div>
+
+            <div class="slides">
+                <section>
+                    <div class="editor">
+                        <div class="window left" data-lang="coffee">
+                            <div class="code">
+x = (keyCode) ->
+    switch keyCode
+        when 38
+            command = "previous"
+        when 40
+            command = "next"
+
+    return command if command
+
+x 38
+                            </div>
+                            <div class="res"></div>
+                        </div>
+                        <div class="window right" data-lang="javascript">
+                            <div class="code"></div>
+                            <div class="res"></div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="slides">
+                <section>
+                    <div class="editor">
+                        <div class="window left" data-lang="coffee">
+                            <div class="code">
+x = (keyCode) ->
+    switch keyCode
+        when 38 then "previous"
+        when 40 then "next"
+
+x 38
+                            </div>
+                            <div class="res"></div>
+                        </div>
+                        <div class="window right" data-lang="javascript">
+                            <div class="code"></div>
+                            <div class="res"></div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+
+            <div class="slides">
+                <section>
+                    <h2>CoffeeScript in the wild</h2>
+                </section>
+
+                <!--
+                Praxisnahe CoffeeScript Beispiele
+                -->
+            </div>
+
+
+            <div class="slides">
+                <section>
+                    <div class="editor">
+                        <div class="window left" data-lang="coffee">
+                            <div class="code">
+$('#dialog').dialog()
+                            </div>
+                            <div class="res"></div>
+                        </div>
+                        <div class="window right" data-lang="javascript">
+                            <div class="code"></div>
+                            <div class="res"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <!--
+                    Eklig sowas,
+                    Singleton, keine Architektur
+                    - Just works -
+                    Wir sind Architekten :)
+                -->
+            </div>
+
+
+            <div class="slides">
+                <section>
+                    <div class="editor">
+                        <div class="window left" data-lang="coffee">
+                            <div class="code">
+var a = (function() {
+    function a() {}
+
+    a.prototype.foo = function() {
+        return "bar";
+    };
+
+    return a;
+})();
+
+(new a).foo()
+                            </div>
+                            <div class="res"></div>
+                        </div>
+                        <div class="window right" data-lang="javascript">
+                            <div class="code"></div>
+                            <div class="res"></div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="slides">
+                <section>
+                    <h2>a bit oop</h2>
+                </section>
+            </div>
+
+
+            <div class="slides">
+                <section>
+                    <div class="editor">
+                        <div class="window left" data-lang="coffee">
+                            <div class="code">
+class a
+    foo: -> "bar"
+
+(new a).foo()
+                            </div>
+                            <div class="res"></div>
+                        </div>
+                        <div class="window right" data-lang="javascript">
+                            <div class="code"></div>
+                            <div class="res"></div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="slides">
+                <section>
+                    <div class="editor">
+                        <div class="window left" data-lang="coffee">
+                            <div class="code">
+class a
+    foo: -> "bar"
+
+class b extends a
+
+
+(new a).foo()
+                            </div>
+                            <div class="res"></div>
+                        </div>
+                        <div class="window right" data-lang="javascript">
+                            <div class="code"></div>
+                            <div class="res"></div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+
+            <div class="slides">
+                <section>
+                    <div class="editor">
+                        <div class="window left" data-lang="coffee">
+                            <div class="code">
+module = {}
+module.exports = class
+    foo: -> "bar"
+
+(new module.exports).foo()
+                            </div>
+                            <div class="res"></div>
+                        </div>
+                        <div class="window right" data-lang="javascript">
+                            <div class="code"></div>
+                            <div class="res"></div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+
+            <div class="slides">
+                <section>
+                    <div class="editor">
+                        <div class="window left" data-lang="coffee">
+                            <div class="code">
+class a
+    @foo: -> "bar"
+
+a.foo()
+                            </div>
+                            <div class="res"></div>
+                        </div>
+                        <div class="window right" data-lang="javascript">
+                            <div class="code"></div>
+                            <div class="res"></div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="slides">
+                <section>
+                    <div class="editor">
+                        <div class="window left" data-lang="coffee">
+                            <div class="code">
+$('#element').click(function(){
+    var that = this;
+
+    $('.elements').each(function(i, v){
+        that.doSomething(v);
+    });
+});
+                            </div>
+                            <div class="res"></div>
+                        </div>
+                        <div class="window right" data-lang="javascript">
+                            <div class="code"></div>
+                            <div class="res"></div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+
+            <div class="slides">
+                <section>
+                    <div class="editor">
+                        <div class="window left" data-lang="coffee">
+                            <div class="code">
+$('#element').click ->
+    $('.elements').each (i, v) =>
+        @doSomething v
+                            </div>
+                            <div class="res"></div>
+                        </div>
+                        <div class="window right" data-lang="javascript">
+                            <div class="code"></div>
+                            <div class="res"></div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+
+
 
 		</div>
 

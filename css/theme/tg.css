@@ -14,7 +14,7 @@
 
 body {
     font-size:2em;
-    font-family: "Quicksand", sans-serif;
+    font-family: "Arial", sans-serif;
 }
 
 
@@ -37,7 +37,7 @@ section p {
 .reveal h6 {
   margin: 0 0 20px 0;
   color: #FF5E99;
-  font-family: "Quicksand", sans-serif;
+  font-family: "Arial", sans-serif;
   line-height: 0.9em;
   letter-spacing: -0.08em;
   text-shadow: none; }
