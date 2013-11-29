@@ -35,6 +35,11 @@
       return this.dom.find('.window.left');
     };
 
+    editor.prototype.destroy = function() {
+      this.getEditorLeft().destroy();
+      return this.getEditorRight().destroy();
+    };
+
     editor.prototype.setOutEditorLeft = function(out) {
       if (typeof out === "undefined") {
         out = "undefined";
@@ -69,7 +74,7 @@
         this.editorRightLanguage = 'c';
         try {
           this.setOutEditorLeft(eval(code));
-          console.log('eval coffee!');
+          console.log('eval coffee!', code);
         } catch (_error) {
           coffeecompile = _error;
           this.setOutEditorLeft(JSON.stringify(coffeecompile, null, '&nbsp;').replace(/\n/g, '<br/>'));
@@ -119,10 +124,14 @@
 
   })();
 
-  $(document).ready(function() {
-    return $('.editor').each(function(i, el) {
+  Reveal.addEventListener('slidechanged', function() {
+    try {
+      document.editor.destroy();
+    } catch (_error) {}
+    return $(arguments[0].currentSlide).find('.editor').each(function(i, el) {
       $(el).find('.code').height($(window).height() - 100);
-      return (new editor($(el))).run();
+      document.editor = new editor($(el));
+      return document.editor.run();
     });
   });
 

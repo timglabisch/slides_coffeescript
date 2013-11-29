@@ -22,6 +22,10 @@ class editor
   getWindowLeft: ->
     @dom.find '.window.left'
 
+  destroy: ->
+    @getEditorLeft().destroy()
+    @getEditorRight().destroy()
+
   setOutEditorLeft: (out) ->
     out = "undefined" if typeof out == "undefined"
     @getWindowLeft().find('.res').html @editorRightLanguage + ': ' + out.toString()
@@ -46,7 +50,7 @@ class editor
         @editorRightLanguage = 'c'
         try
           @setOutEditorLeft eval code
-          console.log 'eval coffee!'
+          console.log 'eval coffee!', code
         catch coffeecompile
           @setOutEditorLeft JSON.stringify(coffeecompile, null, '&nbsp;').replace(/\n/g, '<br/>')
           return
@@ -86,10 +90,14 @@ class editor
     @evalEditor()
 
 
-$(document).ready ->
-  $('.editor').each (i, el) ->
+Reveal.addEventListener 'slidechanged',  ->
+
+  try document.editor.destroy()
+
+  $(arguments[0].currentSlide).find('.editor').each (i, el) ->
     $(el).find('.code').height $(window).height() - 100
-    (new editor $(el)).run()
+    document.editor = new editor $(el)
+    document.editor.run()
 
 
 
