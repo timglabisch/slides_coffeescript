@@ -1,5 +1,9 @@
-js:
+clean:
+	find . -iname "*.js" -exec rm {} \;
+	find . -iname "*.map" -exec rm {} \;
 	rm -rf build
+
+js:
 	coffee -bjc -o build/ \
 	lib/di.coffee \
 	lib/dispatcher.coffee \
@@ -8,6 +12,6 @@ js:
 	service/greeter.coffee \
 	main.coffee
 
-run: js
+run: clean js
 	reset
 	node build/.js
