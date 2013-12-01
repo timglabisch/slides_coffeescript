@@ -17,7 +17,7 @@
     dispatcher.prototype.dispatchRoute = function(route) {
       var e;
       try {
-        return this.di.get('controller' + route.controller).dispatch(route);
+        return this.di.get('controller' + route.controller)().dispatch(route);
       } catch (_error) {
         e = _error;
         if (e.msg) {

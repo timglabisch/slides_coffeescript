@@ -8,7 +8,7 @@ class dispatcher
 
   dispatchRoute: (route) ->
     try
-      @di.get('controller' + route.controller).dispatch route
+      @di.get('controller' + route.controller)().dispatch route
     catch e
       console.log e.msg if e.msg
       console.log e.message if e.message

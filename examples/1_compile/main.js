@@ -8,17 +8,20 @@
     main.prototype.di = null;
 
     main.prototype.getContainer = function() {
-      if (this.di == null) {
+      if (this.di) {
         return this.di;
       }
-      this.di = new diContainer;
+      this.di = new di;
       this.di.configure({
         factories: {
           dispatcher: function(di) {
             return new dispatcher(di);
           },
-          helloController: function() {
-            return new helloController;
+          controllerHello: function(di) {
+            return new controllerHello(di.get('serviceGreeter'));
+          },
+          serviceGreeter: function() {
+            return new serviceGreeter;
           }
         }
       });
@@ -34,7 +37,7 @@
   })();
 
   (new main).handle({
-    controller: 'hello'
+    controller: 'Hello'
   });
 
 }).call(this);

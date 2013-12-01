@@ -2,14 +2,16 @@ class main
   di: null
 
   getContainer: ->
-    return @di if !@di?
-    @di = new diContainer
+    return @di if @di
+    @di = new di
     @di.configure
       factories:
         dispatcher: (di)->
           new dispatcher di
-        helloController: ->
-          new helloController
+        controllerHello: (di) ->
+          new controllerHello di.get('serviceGreeter')
+        serviceGreeter: ->
+          new serviceGreeter
     @di
 
   handle: (request) ->
@@ -17,4 +19,4 @@ class main
 
 
 (new main).handle
-  controller: 'hello'
+  controller: 'Hello'

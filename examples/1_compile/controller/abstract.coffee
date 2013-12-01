@@ -1,4 +1,4 @@
-class abstractController
+class controllerAbstract
   getDom: -> @dom
 
   dispatch: (req) ->
@@ -10,4 +10,4 @@ class abstractController
     @[req.action + 'Action'](req)
 
 
-module.exports = abstractController
+module.exports = controllerAbstract
