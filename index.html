@@ -995,6 +995,28 @@ class a
                 </section>
             </div>
 
+            <div class="slides">
+                <section>
+                    <div class="editor">
+                        <div class="window left" data-lang="coffee">
+                            <div class="code">
+class a
+    @foo: -> "bar"
+
+a.foo()
+                            </div>
+                            <div class="res"></div>
+                        </div>
+                        <div class="window right" data-lang="javascript">
+                            <div class="code"></div>
+                            <div class="res"></div>
+                        </div>
+                    </div>
+                </section>
+                <!--
+                    Statische Funktionen
+                -->
+            </div>
 
 
             <div class="slides">
@@ -1030,26 +1052,6 @@ class b extends a
             </div>
 
 
-            <div class="slides">
-                <section>
-                    <div class="editor">
-                        <div class="window left" data-lang="coffee">
-                            <div class="code">
-module = {}
-module.exports = class
-    foo: -> "bar"
-
-(new module.exports).foo()
-                            </div>
-                            <div class="res"></div>
-                        </div>
-                        <div class="window right" data-lang="javascript">
-                            <div class="code"></div>
-                            <div class="res"></div>
-                        </div>
-                    </div>
-                </section>
-            </div>
 
 
             <div class="slides">
@@ -1058,52 +1060,13 @@ module.exports = class
                         <div class="window left" data-lang="coffee">
                             <div class="code">
 class a
-    @foo: -> "bar"
+    constructor: (@dom) ->
+        @dom.find('.foo').click (e) ->
+            @handelClickFoo e
 
-a.foo()
-                            </div>
-                            <div class="res"></div>
-                        </div>
-                        <div class="window right" data-lang="javascript">
-                            <div class="code"></div>
-                            <div class="res"></div>
-                        </div>
-                    </div>
-                </section>
-            </div>
+    handelClickFoo: (e) ->
 
-            <div class="slides">
-                <section>
-                    <div class="editor">
-                        <div class="window left" data-lang="coffee">
-                            <div class="code">
-$('#_element').click(function(){
-    var that = this;
-
-    $('._elements').each(function(i, v){
-        that.doSomething(v);
-    });
-});
-                            </div>
-                            <div class="res"></div>
-                        </div>
-                        <div class="window right" data-lang="javascript">
-                            <div class="code"></div>
-                            <div class="res"></div>
-                        </div>
-                    </div>
-                </section>
-            </div>
-
-
-            <div class="slides">
-                <section>
-                    <div class="editor">
-                        <div class="window left" data-lang="coffee">
-                            <div class="code">
-$('#_element').click ->
-    $('._elements').each (i, v) =>
-        @doSomething v
+0
                             </div>
                             <div class="res"></div>
                         </div>
