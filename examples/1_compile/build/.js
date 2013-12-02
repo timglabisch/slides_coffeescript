@@ -176,8 +176,6 @@ controllerAbstract = (function() {
 
 })();
 
-module.exports = controllerAbstract;
-
 controllerHello = (function(_super) {
   __extends(controllerHello, _super);
 
@@ -204,10 +202,6 @@ serviceGreeter = (function() {
   return serviceGreeter;
 
 })();
-
-if (typeof module !== "undefined") {
-  module.exports = serviceGreeter;
-}
 
 main = (function() {
   function main() {}

@@ -8,6 +8,3 @@ class controllerAbstract
     @dom = req.dom || {}
 
     @[req.action + 'Action'](req)
-
-
-module.exports = controllerAbstract

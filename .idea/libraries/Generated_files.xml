@@ -2,11 +2,23 @@
   <library name="Generated files" type="javaScript">
     <properties>
       <sourceFilesUrls>
+        <item url="file://$PROJECT_DIR$/examples/1_compile/controller/hello.js" />
+        <item url="file://$PROJECT_DIR$/examples/1_compile/lib/di.js" />
         <item url="file://$PROJECT_DIR$/main.js" />
+        <item url="file://$PROJECT_DIR$/examples/1_compile/service/greeter.js" />
+        <item url="file://$PROJECT_DIR$/examples/1_compile/controller/abstract.js" />
       </sourceFilesUrls>
     </properties>
     <CLASSES>
+      <root url="file://$PROJECT_DIR$/examples/1_compile/lib/dispatcher.js" />
+      <root url="file://$PROJECT_DIR$/examples/1_compile/main.js" />
+      <root url="file://$PROJECT_DIR$/examples/1_compile/lib/dispatcher.js" />
+      <root url="file://$PROJECT_DIR$/examples/1_compile/main.js" />
+      <root url="file://$PROJECT_DIR$/examples/1_compile/controller/hello.js" />
+      <root url="file://$PROJECT_DIR$/examples/1_compile/lib/di.js" />
       <root url="file://$PROJECT_DIR$/main.js" />
+      <root url="file://$PROJECT_DIR$/examples/1_compile/service/greeter.js" />
+      <root url="file://$PROJECT_DIR$/examples/1_compile/controller/abstract.js" />
     </CLASSES>
     <SOURCES />
   </library>

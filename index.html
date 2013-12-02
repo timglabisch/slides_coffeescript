@@ -73,7 +73,7 @@
 
         .editor .res {
             height:200px;
-            color:white;
+            color: black;
             position: absolute;
         }
     </style>
@@ -104,21 +104,21 @@
                         wer nutzt
                     </h1>
 
-                    <h2 class="fragment">
+                    <h3 class="fragment">
                         - CoffeeScript?
-                    </h2>
+                    </h3>
 
-                    <h2 class="fragment">
+                    <h3 class="fragment">
                         - JavaScript?
-                    </h2>
+                    </h3>
 
-                    <h2 class="fragment">
+                    <h3 class="fragment">
                         - "oop"?
-                    </h2>
+                    </h3>
 
-                    <h2 class="fragment">
-                        compile to JavaScript
-                    </h2>
+                    <h3 class="fragment">
+                        ... compile to JavaScript ...?
+                    </h3>
                 </section>
                 <!--
                     Am Anfang die gewohnte Frage, ....
@@ -152,6 +152,14 @@
             </div>
 
 
+            <div class="slides">
+                <section>
+                    <h2>
+                        live coding!!!
+                    </h2>
+                </section>
+            </div>
+
 
 
             <div class="slides">
@@ -159,7 +167,7 @@
                     <div class="editor">
                         <div class="window left" data-lang="coffee">
                             <div class="code">
-var \u1000 = "\u1011";
+var \u1000 = '😻';
 က
                             </div>
                             <div class="res"></div>
@@ -177,10 +185,26 @@ var \u1000 = "\u1011";
                         erkennt ob javascript
                         wenn coffeescript, javascript rechts daneben
 
-                    Kein var Statement!
+                    1. valides Javascript
 
-                    Coffeescript hat einen scope aware parser, anders als php, c, js, ...
-                    Coffeescript erkennt, dass var noch nicht deklariert ist
+                    2. \u1000 und က bedeuten identisches
+
+                    3. Kein Semikolion
+
+                    4. Kein var Statement
+                        Coffeescript hat einen scope aware parser, anders als php, c, js, ...
+                        Coffeescript erkennt, dass var noch nicht deklariert ist
+
+
+                    5. Kein Mix aus Utf8 Zeichen, aus \u1000 -> က
+
+                    6. Unterstes က entfernen, return value stimmt noch!
+
+                    7. var davor schreiben, return value stimmt nicht mehr
+
+                    8. alles ist eine Expression, alles gibt was zurück, alles!
+
+
 
 
                     Resultat:
@@ -194,9 +218,8 @@ var \u1000 = "\u1011";
                     <div class="editor">
                         <div class="window left" data-lang="coffee">
                             <div class="code">
-var a = 0;
 if(0 === -0) {
-    a = 1;
+    var a = 1;
 }
 
 a
@@ -211,6 +234,21 @@ a
                 </section>
                 <!--
 
+                    1. Übersetzen in Coffeescript
+
+                    2. was ist unnötig?
+
+                        1. Semikolon
+                        2. Klammern { und }
+                        --- HEY wir haben Javascript!
+                        3. var
+                        4. Klammern ( und )
+                        5. doppelte gleichheitszeichen
+                            1. Coffeescript kennt keine schwachen vergleichsoperatoren
+                            2. a = 1 if `0 == -0` geht
+                            3. optional "is" möglich
+
+
                     if 0 == -0
                         a = 1
 
@@ -220,6 +258,8 @@ a
 
                     Oder:
                     0 is -0 && a = 1
+
+                    && entspricht and
 
                     ACHTUNG
                     if Statement gibt was zurück!
@@ -250,9 +290,17 @@ THERE IS ( NO (
                         </div>
                     </div>
                     <!--
-                    Syntax ist wenig überraschend
-                    Syntax lässt sich mischen
-                    Syntax ist sehr gnädig (letztes Beispiel)
+                    1. Funktionsaufrufe durch leerzeichen getrennt
+
+                    2. Syntax ist wenig überraschend
+
+                    3. Syntax lässt sich mischen, klammern sind optional
+                        1. Klammern müssen gesetzt werden wenns ohne doppeldeutig wäre
+
+                    4. Syntax ist sehr gnädig (letztes Beispiel)
+
+                    5. Warum alles groß geschrieben?
+                        1. there >>>"is"<<<<
                     -->
                 </section>
             </div>
@@ -262,7 +310,40 @@ THERE IS ( NO (
                     <div class="editor">
                         <div class="window left" data-lang="coffee">
                             <div class="code">
-->->->->->5
+(function() {
+    return 5;
+})()
+                            </div>
+                            <div class="res"></div>
+                        </div>
+                        <div class="window right" data-lang="javascript">
+                            <div class="code"></div>
+                            <div class="res"></div>
+                        </div>
+                    </div>
+                    <!--
+                    1. Semikolon entfernen
+
+                    2. klammern weg
+
+                    3. function durch ->
+
+                    4. klammern hinzufügen, self call ...
+
+                    5. return weg
+
+                    (-> 5)()
+                    -->
+                </section>
+            </div>
+
+            <div class="slides">
+                <section>
+                    <div class="editor">
+                        <div class="window left" data-lang="coffee">
+                            <div class="code">
+a = ->->->->->5
+a()()()()()
                             </div>
                             <div class="res"></div>
                         </div>
@@ -277,30 +358,13 @@ THERE IS ( NO (
                 </section>
             </div>
 
-            <div class="slides">
-                <section>
-                    <div class="editor">
-                        <div class="window left" data-lang="coffee">
-                            <div class="code">
-document.a?.b = c
-                            </div>
-                            <div class="res"></div>
-                        </div>
-                        <div class="window right" data-lang="javascript">
-                            <div class="code"></div>
-                            <div class="res"></div>
-                        </div>
-                    </div>
-
-                </section>
-            </div>
 
             <div class="slides">
                 <section>
                     <div class="editor">
                         <div class="window left" data-lang="coffee">
                             <div class="code">
-console.log "up" if console? and console.log?
+console.log "up" if console?.log
                             </div>
                             <div class="res"></div>
                         </div>
@@ -333,7 +397,7 @@ a = (cb) -> cb? "data"
 
                 </section>
                 <!--
-                    oder einfach nur console?.log?
+                    schick schick für callbacks
                 -->
             </div>
 
@@ -342,10 +406,10 @@ a = (cb) -> cb? "data"
                     <div class="editor">
                         <div class="window left" data-lang="coffee">
                             <div class="code">
-$('._foo').html """
-   <a href="#{getRouter().url 'user', user.id}">
-       <img src="#{getUserImageService()getImage(user).getSrc()}"/>
-   </a>
+x('._foo').html """
+   a href="#{getRouter().url 'user', user.id}">
+       img src="#{getUserImageService().getImage(user).getSrc()}"/>
+   /a>
 """
                             </div>
                             <div class="res"></div>
@@ -355,6 +419,14 @@ $('._foo').html """
                             <div class="res"></div>
                         </div>
                     </div>
+
+                    <!--
+                        1. < am Anfang com HTML ricgtig setzen
+
+                        2. mehrere Zeilen
+
+                        3. Funktionen lassen sich embedden
+                    -->
 
                 </section>
             </div>
@@ -374,6 +446,9 @@ document.a ?= c
                         </div>
                     </div>
                 </section>
+                <!--
+                    Zuweisung falls kein wert vorhanden
+                -->
             </div>
 
             <div class="slides">
@@ -412,18 +487,6 @@ add("Why am I a ", typeof + "");
                     -->
 
                 </section>
-                <!--
-
-                    Editor:
-                        output unten
-                        erkennt ob javascript
-                        wenn coffeescript, javascript rechts daneben
-
-                    Kein var Statement!
-
-                    Coffeescript hat einen scope aware parser, anders als php, c, js, ...
-                    Coffeescript erkennt, dass var noch nicht deklariert ist
-                -->
             </div>
 
             <div class="slides">
@@ -462,9 +525,12 @@ $(document).ready(function() {
                         <br/>
                         <br/>
                         <br/>
-                        "It's just JavaScript".
+                        <h1>"It's just JavaScript".</h1>
                     </h3>
                     <!--
+
+                        1. wer Javascript kann, lernt CoffeeScript sehr schnell
+
 
                     -->
                 </section>
@@ -476,7 +542,13 @@ $(document).ready(function() {
                         The compiled output is readable<br/> and pretty-printed, ...
                     </h3>
                     <!--
+                        1. CoffeeScript generiert was du erwartest, keine Überraschungen
 
+                        2. der Output ist lesbar, debugbar
+
+                        3. solltest du weg wollen von CoffeeScript, schnapp dir das JS...
+                            3.1 Der Weg zurück wird nie verbaut
+                            3.2 Anders als bei z.b. GWT
                     -->
                 </section>
             </div>
@@ -487,7 +559,8 @@ $(document).ready(function() {
                         will work in every<br/> JavaScript runtime, ...
                     </h3>
                     <!--
-
+                        Ecmascript 5?
+                        IE 6 ist kein Problem
                     -->
                 </section>
             </div>
@@ -498,7 +571,9 @@ $(document).ready(function() {
                         ... and tends to run as fast or faster<br/> than the equivalent handwritten JavaScript.
                     </h3>
                     <!--
-
+                        1. Optimiert nicht auf den Browser
+                            1. GWT macht dies z.b.
+                        2. wollt ihr z.b. forEach, map o. etc. nutzen, tut es.
                     -->
                 </section>
             </div>
@@ -526,6 +601,9 @@ add(someInt, add(someInt, 5));
                         </div>
                     </div>
 				</section>
+                <!--
+                    just translate
+                -->
             </div>
 
             <div class="slides">
@@ -549,11 +627,17 @@ x(greeter, ["Andy", "Mario", "..."]).join ', '
                         </div>
                     </div>
                     <!--
-                        Return Statement hinzufügen!
+                        1. Code sieht komisch aus?
 
-                        wo ist der unterschied?
-                        letztes Statement wird returnt!
-                        for hat eine return value!
+                        2. Return Statement hinzufügen!
+
+                        3. wo ist der unterschied?
+
+                        4. letztes Statement wird returnt!
+                            for hat eine return value!
+                            ein array!
+
+                        5. wir sammeln alle rückgabewerte des Callbacks!
                     -->
                 </section>
             </div>
@@ -573,6 +657,9 @@ names().join ', '
                             <div class="code"></div>
                             <div class="res"></div>
                         </div>
+                        <!--
+                            Beispiel return Value der Collection von names.
+                        -->
                     </div>
 
                 </section>
@@ -596,6 +683,9 @@ $('meta')
                             <div class="res"></div>
                         </div>
                     </div>
+                    <!--
+                        Einfaches map and reduce Beispiel
+                    -->
                 </section>
             </div>
 
@@ -613,6 +703,19 @@ $('some_selector').css({top: 42, left: 42})
                             <div class="res"></div>
                         </div>
                     </div>
+                    <!--
+                        Objektsyntax
+
+                        .css top: 42, left: 42
+
+                        oder
+
+                        .css
+                            top: 42
+                            left: 42
+
+                        korrigiert jegliche komma's
+                    -->
                 </section>
             </div>
 
@@ -623,7 +726,7 @@ $('some_selector').css({top: 42, left: 42})
                         <div class="window left" data-lang="coffee">
                             <div class="code">
 $.ajax
-    url: path
+    url: url
     timeout: 5
     data:
         form: "workspace"
@@ -638,6 +741,9 @@ $.ajax
                             <div class="res"></div>
                         </div>
                     </div>
+                    <!--
+                        Wenn ihr es in { und } schreibt, dann geht auf "url" anstelle von url: url
+                    -->
                 </section>
             </div>
 
@@ -666,6 +772,9 @@ x 38
                         </div>
                     </div>
                 </section>
+                <!--
+                    Switch hat einen Rückgabewert
+                -->
             </div>
 
             <div class="slides">
@@ -688,6 +797,9 @@ x 38
                         </div>
                     </div>
                 </section>
+                <!--
+                    alternative Schreibweise um mit Switch zu arbeiten
+                -->
             </div>
 
 
@@ -697,7 +809,12 @@ x 38
                 </section>
 
                 <!--
-                Praxisnahe CoffeeScript Beispiele
+
+                ich hatte im vorfeld mal gefragt
+
+                1. Praxisnahe Beispiele sollten es sein :)
+
+
                 -->
             </div>
 
@@ -707,7 +824,7 @@ x 38
                     <div class="editor">
                         <div class="window left" data-lang="coffee">
                             <div class="code">
-$('#_dialog').dialog()
+$('#dialog').dialog()
                             </div>
                             <div class="res"></div>
                         </div>
@@ -723,6 +840,8 @@ $('#_dialog').dialog()
                     Singleton, keine Architektur
                     - Just works -
                     Wir sind Architekten :)
+
+                    ... aber idt ja kein vortrag zu frontend design ... :)
                 -->
             </div>
 
@@ -752,6 +871,9 @@ var a = (function() {
                         </div>
                     </div>
                 </section>
+                <!--
+
+                -->
             </div>
 
             <div class="slides">
@@ -781,6 +903,100 @@ class a
                 </section>
             </div>
 
+
+            <div class="slides">
+                <section>
+                    <div class="editor">
+                        <div class="window left" data-lang="coffee">
+                            <div class="code">
+class a
+    constructor: ->
+        @foo = foo;
+
+(new a "bar").foo
+                            </div>
+                            <div class="res"></div>
+                        </div>
+                        <div class="window right" data-lang="javascript">
+                            <div class="code"></div>
+                            <div class="res"></div>
+                        </div>
+                    </div>
+
+                    <!--
+
+                     constructor  (@foo): ->
+                     constructor  (@foo = "bar"): ->
+
+                    -->
+                </section>
+            </div>
+
+
+            <div class="slides">
+                <section>
+                    <div class="editor">
+                        <div class="window left" data-lang="coffee">
+                            <div class="code">
+class a
+    setFoo: (@foo) -> @
+    getFoo: -> @foo
+
+
+(new a "bar").foo
+                            </div>
+                            <div class="res"></div>
+                        </div>
+                        <div class="window right" data-lang="javascript">
+                            <div class="code"></div>
+                            <div class="res"></div>
+                        </div>
+                    </div>
+
+                    <!--
+
+                     typisches Beispiel für getter und setter
+
+                    -->
+                </section>
+            </div>
+
+
+            <div class="slides">
+                <section>
+                    <div class="editor">
+                        <div class="window left" data-lang="coffee">
+                            <div class="code">
+class a
+    constructor: (@foo = new (
+        class
+            a: -> 5
+        )) ->
+
+(new a).foo.a()
+                            </div>
+                            <div class="res"></div>
+                        </div>
+                        <div class="window right" data-lang="javascript">
+                            <div class="code"></div>
+                            <div class="res"></div>
+                        </div>
+                    </div>
+
+                    <!--
+
+                     1. ein wenig vergewaltigt
+
+                     2. zeigt was möglich ist
+
+                     3. womöglich mitm servicelocator ganz interessant ^^
+
+                    -->
+                </section>
+            </div>
+
+
+
             <div class="slides">
                 <section>
                     <div class="editor">
@@ -802,6 +1018,15 @@ class b extends a
                         </div>
                     </div>
                 </section>
+                <!--
+                    1. klassische vererbung
+
+                    2. extends wird nur einmalig embedded
+
+                    3. performant, nur statische methoden werden kopiert
+
+                    4. klasse die extended wird muss vorhanden sein.
+                -->
             </div>
 
 
@@ -964,6 +1189,12 @@ $('#_element').click ->
                     -o DORECTORY!
 
                 -->
+            </div>
+
+            <div class="slides">
+                <section>
+                    <h2>Demo</h2>
+                </section>
             </div>
 
 

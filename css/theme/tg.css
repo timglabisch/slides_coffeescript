@@ -19,7 +19,7 @@ body {
 
 
 section p {
-    color: white;
+    color: #FF5E99;
 }
 
 .reveal .state-background {
@@ -40,7 +40,15 @@ section p {
   font-family: "Arial", sans-serif;
   line-height: 0.9em;
   letter-spacing: -0.08em;
-  text-shadow: none; }
+  text-shadow: none;
+}
+
+
+.reveal h1, .reveal h2 {
+    color:white;
+    background-color:#FF5E99;
+    display:inline-block;
+}
 
 .reveal h1 {
   text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2); }
@@ -63,7 +71,7 @@ section p {
   border: none; }
 
 .reveal .roll span:after {
-  color: #fff;
+  color: #FF5E99;
   background: #264c66; }
 
 /*********************************************
