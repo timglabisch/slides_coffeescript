@@ -1078,6 +1078,52 @@ class a
                 </section>
             </div>
 
+            <div class="slides">
+                <section>
+                    <h2>real world application</h2>
+                </section>
+            </div>
+
+
+            <div class="slides">
+                <section>
+                    <div class="editor">
+                        <div class="window left" data-lang="coffee">
+                            <div class="code">
+class main
+  di: null
+
+  getContainer: ->
+    return @di if @di
+    @di = new di
+    @di.configure
+      factories:
+        dispatcher: (di)->
+          new dispatcher di
+        controllerHello: (di) ->
+          new controllerHello di.get('serviceGreeter')
+        serviceGreeter: ->
+          new serviceGreeter
+    @di
+
+  handle: (request) ->
+    @getContainer().get('dispatcher')().dispatch request.controller
+
+
+(new main).handle
+  controller: 'Hello'
+
+                            </div>
+                            <div class="res"></div>
+                        </div>
+                        <div class="window right" data-lang="javascript">
+                            <div class="code"></div>
+                            <div class="res"></div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
 
             <div class="slides">
                 <section>
@@ -1090,22 +1136,37 @@ class a
                 <section>
                     <img src="img/phpstorm_fileWatcher.png"/>
                 </section>
+                <!--
+                    1. wer kennt phpstorm file watcher?
+
+                    2. wer nutzt diese?
+
+
+
+                -->
             </div>
 
             <div class="slides">
                 <section>
                     <img src="img/phpstorm_fileWatcher_bare.png"/>
                 </section>
+                <!--
+                    --bare
+
+                    1. Standadmäßig packt Coffeescript alles in eine anonyme funktion
+
+                    2. Best Practice
+
+                    2. Keine Probleme mit dem Scope
+
+                -->
             </div>
 
             <div class="slides">
                 <section>
                     <img src="img/phpstorm.png"/>
                 </section>
-                <!--
-                   Viele Daten,
-                   Includet die Javascript Files
-               -->
+
             </div>
 
             <div class="slides">
@@ -1113,7 +1174,13 @@ class a
                     <img src="img/kannste_so_machen.png"/>
                 </section>
                 <!--
+
+                    1. Welche Probleme treten auf?
+                        1. jede Datei liegt einzelnt da
+                        2. .map wird nicht geinlinent
+
                     Chaos im Dateisystem
+
                -->
             </div>
 
@@ -1123,6 +1190,8 @@ class a
                 </section>
                 <!--
                     Abhängigkeit zu PHPStorm
+
+                    Abhängigkeiten sind schlecht!
                 -->
             </div>
 
@@ -1134,9 +1203,20 @@ class a
                     <img src="img/jenkins.png"/>
                 </section>
                 <!--
-                    wir wollen Continuous Integration!
-                    Continuous deployment
+
+                    1. wir wollen Continuous Integration!
+
+                    2. Continuous deployment
+
+                    3. Jemand Push't und die Magie nimmt ihren Lauf
                 -->
+            </div>
+
+            <div class="slides">
+                <section>
+                    <h2>CoffeeScript</h2>
+                    <h4>using CoffeeScript.</h4>
+                </section>
             </div>
 
 
@@ -1156,8 +1236,72 @@ class a
 
             <div class="slides">
                 <section>
-                    <h2>Demo</h2>
+                    <pre>
+clean:
+	find . -iname "*.js" -exec rm {} \;
+	find . -iname "*.map" -exec rm {} \;
+	rm -rf build
+
+js:
+	coffee -bjc -o build/ \
+	lib/di.coffee \
+	lib/dispatcher.coffee \
+	controller/abstract.coffee \
+	controller/hello.coffee \
+	service/greeter.coffee \
+	main.coffee
+
+run: clean js
+	reset
+	node build/.js
+                    </pre>
+                    <div class="fragment">
+                    ...
+                    <pre>
+make run
+                    </pre>
+
+                    </div>
+                    <div class="fragment">
+...
+                    <pre>
+node build/.js
+YAAYYYY!!
+hello!! folks
+                    </pre>
+                    </div>
                 </section>
+                <!--
+
+                    1. Wer schreibt Makefiles?
+                        1.1 Organisierte Bash Skripte
+                        1.2 ich mag sie :)
+
+                    2. rufen wir "make run" auf
+
+                    3. output des Skriptes.
+
+                    4. alle Sourcen sind im Repo!
+
+
+                    -b bare, -j join, -c compile, -o out
+                -->
+
+            </div>
+
+            <div class="slides">
+                <section>
+                    <h2>Demo?</h2>
+                </section>
+            </div>
+
+            <div class="slides">
+                <section>
+                    <h2>gut?</h2>
+                </section>
+                <!--
+                    1. Reihenfolge muss explizit angegeben werden
+                -->
             </div>
 
 

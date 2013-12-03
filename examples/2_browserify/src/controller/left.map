@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "left.js",
+  "sourceRoot": "",
+  "sources": [
+    "left.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;CAAA,KAAA,kBAAA;KAAA;oSAAA;;CAAA,CAAA,CAAqB,IAAA,WAArB,CAAqB;;CAArB,CAEA,IAAM,CAAN;CAEE;;;;;CAAA;;CAAA,EAAa,MAAC,EAAd;CACG,EAAG,CAAH,SAAD,QAAA;CADF,IAAa;;CAAb;;CAF6B;CAF/B"
+}

@@ -1,0 +1,10 @@
+{
+    "name": "Carmaster",
+    "version": "0.1.0",
+    "devDependencies": {
+        "grunt": "~0.4.1",
+        "grunt-browserify": "1.2.4",
+        "coffeeify": "~0.5.2",
+        "grunt-contrib-watch": "0.5.3"
+    }
+}

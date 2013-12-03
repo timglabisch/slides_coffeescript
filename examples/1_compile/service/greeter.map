@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "greeter.js",
+  "sourceRoot": "",
+  "sources": [
+    "greeter.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;CAAA,KAAA,QAAA;;CAAA,CAAM;CAEJ;;CAAA,EAAO,CAAA,CAAP,IAAQ;CAAD,EACQ,OAAb,GAAA;CADF,IAAO;;CAAP;;CAFF;CAAA"
+}
