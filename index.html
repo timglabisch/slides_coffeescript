@@ -1319,6 +1319,93 @@ hello!! folks
             </div>
 
 
+            <div class="slides">
+                <section>
+                    <img src="img/browserify2.png"/>
+                </section>
+            </div>
+
+
+            <div class="slides">
+                <section>
+                    <div class="editor">
+                        <div class="window left" data-lang="coffee">
+                            <div class="code">
+_di = require './lib/di.coffee'
+_dispatcher = require './lib/dispatcher.coffee'
+_controllerLeft = require './controller/left.coffee'
+_controllerContent = require './controller/content.coffee'
+_controllerFooter = require './controller/footer.coffee'
+_serviceGreeter = require './service/greeter.coffee'
+
+class main
+  di: null
+
+  getContainer: ->
+    return @di if @di
+    @di = new _di
+    @di.configure
+      factories:
+        dispatcher: (di)->
+          new _dispatcher di
+        controllerLeft: (di) ->
+          new _controllerLeft di.get('serviceGreeter')
+        controllerContent: (di) ->
+          new _controllerContent
+        controllerFooter: (di) ->
+          new _controllerFooter
+        serviceGreeter: ->
+          new _serviceGreeter
+    @di
+
+  handle: (request) ->
+    @getContainer().get('dispatcher')().dispatchRoute request
+
+app = new main
+$('document').ready ->
+  $('.app_controller').each (i, el) ->
+    app.handle
+      controller: $(el).data('controller')
+      dom: $(el)
+
+                            </div>
+                            <div class="res"></div>
+                        </div>
+                        <div class="window right" data-lang="javascript">
+                            <div class="code"></div>
+                            <div class="res"></div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="slides">
+                <section>
+                    <h2>mehr?</h2>
+                </section>
+            </div>
+
+            <div class="slides">
+                <section>
+                    <img src="img/nodejs.png">
+                </section>
+            </div>
+
+            <div class="slides">
+                <section>
+                    <img src="img/chrome.jpg">
+                </section>
+            </div>
+
+            <div class="slides">
+                <section>
+                    <img src="img/nginx.gif"><br/>
+                    <img src="img/fastcgi.png"><br/>
+                    <img src="img/v8.png">
+                </section>
+            </div>
+
+
 
 
 		</div>
