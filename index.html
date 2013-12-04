@@ -142,14 +142,14 @@
                     <p class="fragment">
                         syntax und so.
                     </p>
+                    <aside class="notes">
+                    <ul>
+                        <li>Wer will eine langweilige Wikipedia-Einführung in Coffeescript hören?</li>
+                        <li>Ich übersetze die folgenden Statements in Coffeescript</li>
+                        <li>Im Anschluss erzähl ich vielleicht ein wenig Historie :)</li>
+                    </ul>
+                </aside>
                 </section>
-                <!--
-                    Wer will eine langweilige Wikipedia-Einführung in Coffeescript hören?
-
-                    Ich übersetze die folgenden Statements in Coffeescript
-
-                    Im Anschluss erzähl ich vielleicht ein wenig Historie :)
-                -->
             </div>
 
 
@@ -178,40 +178,39 @@ var \u1000 = '😻';
                             <div class="res"></div>
                         </div>
                     </div>
+                    <aside class="notes">
+                        <ul>
+                            <li>
+                                Editor:
+                                <ul>
+                                    <li>output unten</li>
+                                    <li>erkennt ob javascript</li>
+                                    <li>wenn coffeescript, javascript rechts daneben</li>
+                                </ul>
+                            </li>
+                            <li>valides Javascript</li>
+                            <li>\u1000 und က bedeuten identisches</li>
+                            <li>Kein Semikolion</li>
+                            <li>
+                                Kein var Statement
+                                <ul>
+                                    <li>Coffeescript hat einen scope aware parser, anders als php, c, js, ...</li>
+                                    <li>Coffeescript erkennt, dass var noch nicht deklariert ist</li>
+                                </ul>
+                            </li>
+                            <li>Kein Mix aus Utf8 Zeichen, aus \u1000 -> က</li>
+                            <li>Unterstes က entfernen, return value stimmt noch!</li>
+                            <li>var davor schreiben, return value stimmt nicht mehr</li>
+                            <li>alles ist eine Expression, alles gibt was zurück, alles!</li>
+                            <li>
+                                Resultat:
+                                <ul><li>
+                                    foo = "bar"
+                                </li></ul>
+                            </li>
+                        </ul>
+                    </aside>
                 </section>
-                <!--
-
-                    Editor:
-                        output unten
-                        erkennt ob javascript
-                        wenn coffeescript, javascript rechts daneben
-
-                    1. valides Javascript
-
-                    2. \u1000 und က bedeuten identisches
-
-                    3. Kein Semikolion
-
-                    4. Kein var Statement
-                        Coffeescript hat einen scope aware parser, anders als php, c, js, ...
-                        Coffeescript erkennt, dass var noch nicht deklariert ist
-
-
-                    5. Kein Mix aus Utf8 Zeichen, aus \u1000 -> က
-
-                    6. Unterstes က entfernen, return value stimmt noch!
-
-                    7. var davor schreiben, return value stimmt nicht mehr
-
-                    8. alles ist eine Expression, alles gibt was zurück, alles!
-
-
-
-
-                    Resultat:
-
-                    foo = "bar"
-                -->
             </div>
 
             <div class="slides">
@@ -232,42 +231,56 @@ a
                             <div class="res"></div>
                         </div>
                     </div>
+
+                    <aside class="notes">
+                    <ul>
+                        <li>1. Übersetzen in Coffeescript</li>
+
+                        <li>2. was ist unnötig?</li>
+
+                        <li>1. Semikolon</li>
+                        <li>2. Klammern { und }</li>
+                        <li>--- HEY wir haben Javascript!</li>
+                        <li>3. var</li>
+                        <li>4. Klammern ( und )</li>
+                        <li>5. doppelte gleichheitszeichen</li>
+                        <li>1. Coffeescript kennt keine schwachen vergleichsoperatoren</li>
+                        <li>2. a = 1 if `0 == -0` geht</li>
+                        <li>3. optional "is" möglich</li>
+
+
+                        <li>
+                            if 0 == -0
+                            a = 1
+                        </li>
+
+
+                        <li>
+                        Oder:
+                        a = 1 if 0 is -0
+                        </li>
+
+
+                        <li>
+                        Oder:
+                        0 is -0 && a = 1
+                        </li>
+
+                        <li>
+                        && entspricht and
+                        </li>
+
+                        <li>
+                        ACHTUNG
+                            <ul>
+                                <li>if Statement gibt was zurück!</li>
+                                <li>bei coffeescript gibt alles etwas zurück :)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    </aside>
                 </section>
-                <!--
 
-                    1. Übersetzen in Coffeescript
-
-                    2. was ist unnötig?
-
-                        1. Semikolon
-                        2. Klammern { und }
-                        --- HEY wir haben Javascript!
-                        3. var
-                        4. Klammern ( und )
-                        5. doppelte gleichheitszeichen
-                            1. Coffeescript kennt keine schwachen vergleichsoperatoren
-                            2. a = 1 if `0 == -0` geht
-                            3. optional "is" möglich
-
-
-                    if 0 == -0
-                        a = 1
-
-
-                    Oder:
-                    a = 1 if 0 is -0
-
-                    Oder:
-                    0 is -0 && a = 1
-
-                    && entspricht and
-
-                    ACHTUNG
-                    if Statement gibt was zurück!
-                    bei coffeescript gibt alles etwas zurück :)
-
-
-                -->
             </div>
 
             <div class="slides">
@@ -290,19 +303,30 @@ THERE IS ( NO (
                             <div class="res"></div>
                         </div>
                     </div>
-                    <!--
-                    1. Funktionsaufrufe durch leerzeichen getrennt
+                    <aside class="notes">
+                        <ul>
+                            <li>1. Funktionsaufrufe durch leerzeichen getrennt</li>
 
-                    2. Syntax ist wenig überraschend
+                            <li>2. Syntax ist wenig überraschend</li>
 
-                    3. Syntax lässt sich mischen, klammern sind optional
-                        1. Klammern müssen gesetzt werden wenns ohne doppeldeutig wäre
+                            <li>
+                                3. Syntax lässt sich mischen, klammern sind optional
+                                <ul>
+                                    <li>1. Klammern müssen gesetzt werden wenns ohne doppeldeutig wäre
+                                </ul>
+                            </li>
 
-                    4. Syntax ist sehr gnädig (letztes Beispiel)
 
-                    5. Warum alles groß geschrieben?
-                        1. there >>>"is"<<<<
-                    -->
+                            <li>4. Syntax ist sehr gnädig (letztes Beispiel)</li>
+
+                            <li>
+                                5. Warum alles groß geschrieben?
+                                <ul>
+                                    <li>1. there >>>"is"<<<<</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </aside>
                 </section>
             </div>
 
@@ -322,19 +346,21 @@ THERE IS ( NO (
                             <div class="res"></div>
                         </div>
                     </div>
-                    <!--
-                    1. Semikolon entfernen
+                    <aside class="notes">
+                        <ul>
+                            <li>1. Semikolon entfernen</li>
 
-                    2. klammern weg
+                            <li>2. klammern weg</li>
 
-                    3. function durch ->
+                            <li>3. function durch -> </li>
 
-                    4. klammern hinzufügen, self call ...
+                            <li>4. klammern hinzufügen, self call ...</li>
 
-                    5. return weg
+                            <li>5. return weg</li>
 
-                    (-> 5)()
-                    -->
+                            <li>(-> 5)()</li>
+                        </ul>
+                    </aside>
                 </section>
             </div>
 
@@ -353,9 +379,11 @@ a()()()()()
                             <div class="res"></div>
                         </div>
                     </div>
-                    <!--
-                    Funktionen definieren
-                    -->
+                    <aside class="notes">
+                        <ul>
+                            <li>Funktionen definieren</li>
+                        </ul>
+                    </aside>
                 </section>
             </div>
 
@@ -376,9 +404,11 @@ console.log "up" if console?.log
                     </div>
 
                 </section>
-                <!--
-                    oder einfach nur console?.log?
-                -->
+                <aside class="notes">
+                    <ul>
+                        <li>oder einfach nur console?.log?</li>
+                    </ul>
+                </aside>
             </div>
 
             <div class="slides">
@@ -397,9 +427,11 @@ a = (cb) -> cb? "data"
                     </div>
 
                 </section>
-                <!--
-                    schick schick für callbacks
-                -->
+                <aside class="notes">
+                    <ul>
+                        <li>schick schick für callbacks</li>
+                    </ul>
+                </aside>
             </div>
 
             <div class="slides">
@@ -421,13 +453,15 @@ x('._foo').html """
                         </div>
                     </div>
 
-                    <!--
-                        1. < am Anfang com HTML ricgtig setzen
+                    <aside class="notes">
+                        <ul>
+                            <li>1. < am Anfang com HTML ricgtig setzen
 
-                        2. mehrere Zeilen
+                            <li>2. mehrere Zeilen
 
-                        3. Funktionen lassen sich embedden
-                    -->
+                            <li>3. Funktionen lassen sich embedden</li>
+                        </ul>
+                    </aside>
 
                 </section>
             </div>
@@ -447,9 +481,11 @@ document.a ?= c
                         </div>
                     </div>
                 </section>
-                <!--
-                    Zuweisung falls kein wert vorhanden
-                -->
+                <aside class="notes">
+                    <ul>
+                        <li>Zuweisung falls kein wert vorhanden</li>
+                    </ul>
+                </aside>
             </div>
 
             <div class="slides">
@@ -470,22 +506,23 @@ add("Why am I a ", typeof + "");
                             <div class="res"></div>
                         </div>
                     </div>
-
-                    <!--
-                        Etwas komplizierteres beispiel
-                        - was entfernen damit Syntaktisch noch korrekt?
-                        - ;
-                        - return
-                        - function
-                        - {
-                        - (
-                        + =
-                        + ->
-
-                        add = (a, b) -> a + b;
-
-                        add "Why am I a ", typeof + ""
-                    -->
+                    <aside class="notes">
+                        <ul>
+                            <li>Etwas komplizierteres beispiel</li>
+                            <li>- was entfernen damit Syntaktisch noch korrekt?</li>
+                            <li>- ;</li>
+                            <li>- return</li>
+                            <li>- function</li>
+                            <li>- {</li>
+                            <li>- (</li>
+                            <li>+ =</li>
+                            <li>+ -></li>
+                            <li></li>
+                            <li>add = (a, b) -> a + b;</li>
+                            <li></li>
+                            <li>add "Why am I a ", typeof + ""</li>
+                        </ul>
+                    </aside>
 
                 </section>
             </div>
