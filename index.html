@@ -119,18 +119,19 @@
                     <h3 class="fragment">
                         ... compile to JavaScript ...?
                     </h3>
+
+                    <aside class="notes">
+                        <ul>
+                            <li>Am Anfang die gewohnte Frage, ....</li>
+                            <li>Wer nutzt CoffeeScript?</li>
+                            <li>Wer nutzt Javascript?</li>
+                            <li>Wer scheibt oop Javascript?</li>
+                            <li>Wer nutzt Gwt, Dart, Typescript, ...</li>
+                        </ul>
+                    </aside>
+
                 </section>
-                <!--
-                    Am Anfang die gewohnte Frage, ....
 
-                    Wer nutzt CoffeeScript?
-
-                    Wer nutzt Javascript?
-
-                    Wer scheibt oop Javascript?
-
-                    Wer nutzt Gwt, Dart, Typescript, ...
-                -->
             </div>
 
             <div class="slides">
@@ -1449,8 +1450,8 @@ $('document').ready ->
 					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
-				]
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+                ]
 			});
 
 		</script>
