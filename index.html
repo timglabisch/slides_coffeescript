@@ -1254,6 +1254,7 @@ class a
                     </div>
                     <aside class="notes">
                         <ul>
+                            <li>@entspricht this</li>
                             <li>1. wo ist das Problem?</li>
                             <li>2. => fat arrow</li>
                             <li>bei funktion</li>
@@ -1336,6 +1337,7 @@ class main
                         <ul>
                             <li>1. wer kennt phpstorm file watcher?</li>
                             <li>2. wer nutzt diese?</li>
+                            <li>Änderung einer Datei triggert ein Programm.</li>
                         </ul>
                     </aside>
                 </section>
@@ -1403,6 +1405,7 @@ class main
                             <li>1. wir wollen Continuous Integration!</li>
                             <li>2. Continuous deployment</li>
                             <li>3. Jemand Push't und die Magie nimmt ihren Lauf</li>
+                            <li>4. Lösung: Commandline!</li>
                         </ul>
                     </aside>
                 </section>
@@ -1465,28 +1468,27 @@ YAAYYYY!!
 hello!! folks
                     </pre>
                     </div>
+                    <aside class="notes">
+                        <ul>
+                            <li>
+                                1. Wer schreibt Makefiles?
+                                <ul>
+                                    <li>1.1 Organisierte Bash Skripte</li>
+                                    <li>1.2 ich mag sie :)</li>
+                                </ul>
+                            </li>
+                            <li>2. rufen wir "make run" auf</li>
+
+                            <li>3. output des Skriptes.</li>
+
+                            <li>4. alle Sourcen sind im Repo!</li>
+
+
+                            <li>-b bare, -j join, -c compile, -o out</li>
+                        </ul>
+                    </aside>
                 </section>
-                <aside class="notes">
-                    <ul>
-                        <li>
-                            1. Wer schreibt Makefiles?
-                            <ul>
-                                <li>1.1 Organisierte Bash Skripte</li>
-                                <li>1.2 ich mag sie :)</li>
-                            </ul>
-                        </li>
-                        <li>2. rufen wir "make run" auf</li>
-
-                        <li>3. output des Skriptes.</li>
-
-                        <li>4. alle Sourcen sind im Repo!</li>
-
-
-                        <li>-b bare, -j join, -c compile, -o out</li>
-                    </ul>
-                </aside>
-
-            </div>
+                </div>
 
             <div class="slides">
                 <section>
@@ -1506,10 +1508,41 @@ hello!! folks
                 </section>
             </div>
 
+            <div class="slides">
+                <section>
+                    <pre>
+js:
+	coffee -bjc -o build/ \
+	lib/di.coffee \
+	lib/dispatcher.coffee \
+	controller/abstract.coffee \
+	controller/hello.coffee \
+	service/greeter.coffee \
+	main.coffee
+                    </pre>
+
+                    <aside class="notes">
+                        <ul>
+                            <li>1. Reihenfolge muss explizit angegeben werden</li>
+                        </ul>
+                    </aside>
+                </section>
+            </div>
+
 
             <div class="slides">
                 <section>
                     <img src="img/npm.png"/>
+                    <aside class="notes">
+                        <ul>
+                            <li>Nutzt CommonJS</li>
+                            <li>Standard für NodeJs Projekte</li>
+                            <li>Können wir fürs web verwenden</li>
+                            <li>identishcer Syntax wie nodejs</li>
+                            <li>npm pakete nutzbar</li>
+                            <li>viele Standard verfügbar, streams, buffer</li>
+                        </ul>
+                    </aside>
                 </section>
             </div>
 
@@ -1517,6 +1550,16 @@ hello!! folks
             <div class="slides">
                 <section>
                     <img src="img/browserify.png"/>
+                    <aside class="notes">
+                        <ul>
+                            <li>Zum Bundeln nutzen wir Browserify</li>
+                            <li>Quasi Standard</li>
+                            <li>Kann Coffeescript</li>
+                            <li>Auch ohne CoffeeScript geil</li>
+                            <li>Alternative zu AMD, RequireJs</li>
+                            <li>Alternative Loader, AMD, ..</li>
+                        </ul>
+                    </aside>
                 </section>
             </div>
 
@@ -1582,19 +1625,72 @@ $('document').ready ->
 
             <div class="slides">
                 <section>
+                    <h2>Demo?</h2>
+                    <aside class="notes">
+                        <ul>
+                            <li>im Browser</li>
+                            <li>
+                                HTML Zeigen
+                                <ul>
+                                    <li>3 Controller</li>
+                                    <li>Alle werden dispatcht</li>
+                                </ul>
+                            </li>
+                            <li>
+                                SourceMaps
+                                <ul>
+                                    <li>
+                                        console.log zeigen
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>Debuggen von CoffeeScript</li>
+                            <li>Gebundelt über Browserify via Grunt</li>
+                            <li>Demo natürlich dabei!</li>
+                        </ul>
+                    </aside>
+                </section>
+            </div>
+
+            <div class="slides">
+                <section>
                     <h2>mehr?</h2>
+                    <aside class="notes">
+                        <ul>
+                            <li>
+                                wir haben bereits...
+                            </li>
+                        </ul>
+                    </aside>
                 </section>
             </div>
 
             <div class="slides">
                 <section>
                     <img src="img/nodejs.png">
+                    <aside class="notes">
+                        <ul>
+                            <li>
+                                via nodejs
+                            </li>
+                        </ul>
+                    </aside>
                 </section>
             </div>
 
             <div class="slides">
                 <section>
                     <img src="img/chrome.jpg">
+                    <aside class="notes">
+                        <ul>
+                            <li>
+                                via browserify im browser
+                            </li>
+                            <li>
+                                was fehlt?
+                            </li>
+                        </ul>
+                    </aside>
                 </section>
             </div>
 
@@ -1603,6 +1699,31 @@ $('document').ready ->
                     <img src="img/nginx.gif"><br/>
                     <img src="img/fastcgi.png"><br/>
                     <img src="img/v8.png">
+                    <aside class="notes">
+                        <ul>
+                            <li>
+                                hacky
+                            </li>
+                            <li>
+                                just for fun
+                            </li>
+                            <li>
+                                Demo?
+                            </li>
+                            <li>
+                                make all
+                            </li>
+                            <li>
+                                main zeigen
+                            </li>
+                            <li>
+                                browserify bundelt und embedded die require funktion
+                            </li>
+                            <li>
+                                v8 implementiert nur eine funktion, erste zeile der main zeigen
+                            </li>
+                        </ul>
+                    </aside>
                 </section>
             </div>
 
@@ -1618,6 +1739,14 @@ $('document').ready ->
                     <br/>
                     <br/>
                     <h2>@timglabisch</h2>
+
+                    <aside class="notes">
+                        <ul>
+                            <li>
+                                Würde mich über Feedback freuen.
+                            </li>
+                        </ul>
+                    </aside>
 
                 </section>
             </div>

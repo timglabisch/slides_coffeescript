@@ -14,6 +14,7 @@
     }
 
     _Class.prototype.indexAction = function(req) {
+      console.log("yay");
       return this.dom.html('Controller Content ...');
     };
 
