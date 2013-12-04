@@ -124,6 +124,7 @@
                         <ul>
                             <li>Am Anfang die gewohnte Frage, ....</li>
                             <li>Wer nutzt CoffeeScript?</li>
+                            <li>wer könnte sich vorstellen morgen CoffeeScript zu nutzen?</li>
                             <li>Wer nutzt Javascript?</li>
                             <li>Wer scheibt oop Javascript?</li>
                             <li>Wer nutzt Gwt, Dart, Typescript, ...</li>
@@ -288,12 +289,12 @@ a
                     <div class="editor">
                         <div class="window left" data-lang="coffee">
                             <div class="code">
-THERE IS NO FUCKING MAGICK, REALLY
+THERE IS NO FUCKING MAGIC, REALLY
 
-THERE(IS(NO(FUCKING(MAGICK, REALLY))))
+THERE(IS(NO(FUCKING(MAGIC, REALLY))))
 
 THERE IS ( NO (
-    FUCKING MAGICK, REALLY)
+    FUCKING MAGIC, REALLY)
 )
                             </div>
                             <div class="res"></div>
@@ -406,7 +407,9 @@ console.log "up" if console?.log
                 </section>
                 <aside class="notes">
                     <ul>
+                        <li>Existence operatoren</li>
                         <li>oder einfach nur console?.log?</li>
+                        <li>oder einfach nur console?.log "up"</li>
                     </ul>
                 </aside>
             </div>
@@ -480,12 +483,13 @@ document.a ?= c
                             <div class="res"></div>
                         </div>
                     </div>
+                    <aside class="notes">
+                        <ul>
+                            <li>Zuweisung falls kein wert vorhanden</li>
+                        </ul>
+                    </aside>
                 </section>
-                <aside class="notes">
-                    <ul>
-                        <li>Zuweisung falls kein wert vorhanden</li>
-                    </ul>
-                </aside>
+
             </div>
 
             <div class="slides">
@@ -521,6 +525,14 @@ add("Why am I a ", typeof + "");
                             <li>add = (a, b) -> a + b;</li>
                             <li></li>
                             <li>add "Why am I a ", typeof + ""</li>
+                            <li></li>
+                            <li>warum ists ne nummer?</li>
+                            <ul>
+                                <li>
+                                    +"" ist ne nummer :)
+                                    (typeof(+""))
+                                </li>
+                            </ul>
                         </ul>
                     </aside>
 
@@ -543,13 +555,24 @@ $(document).ready(function() {
                             <div class="res"></div>
                         </div>
                     </div>
-                </section>
-                <!--
-                    Coffeescript wird 1 zu 1 zu Javascript.
-                    Ihr könnt jederzeit das Coffeescript verwerfen.
+                    <aside class="notes">
+                        <ul>
+                            <li>Coffeescript wird 1 zu 1 zu Javascript.</li>
+                            <li>Ihr könnt jederzeit das Coffeescript verwerfen.</li>
+                            <li></li>
+                            <li>Keine komplexen Proxies wie z.b. bei Dart / GWT nötig</li>
+                            <li>
+                                Skript stimmt von trivago
+                                <ul>
+                                    <li>
+                                        jegliches Warum bitte an die frontend devs ...
+                                    </li>
+                                </ul>
+                            </li>
 
-                    Keine komplexen Proxies wie z.b. bei Dart / GWT nötig
-                -->
+                        </ul>
+                    </aside>
+                </section>
             </div>
 
 
@@ -565,12 +588,13 @@ $(document).ready(function() {
                         <br/>
                         <h1>"It's just JavaScript".</h1>
                     </h3>
-                    <!--
-
-                        1. wer Javascript kann, lernt CoffeeScript sehr schnell
-
-
-                    -->
+                    <aside class="notes">
+                        <ul>
+                            <li>1. wer Javascript kann, lernt CoffeeScript sehr schnell</li>
+                            <li>2. nur anderer Syntax</li>
+                            <li>2. maximal kompaktibel</li>
+                        </ul>
+                    </aside>
                 </section>
             </div>
 
@@ -579,15 +603,20 @@ $(document).ready(function() {
                     <h3>
                         The compiled output is readable<br/> and pretty-printed, ...
                     </h3>
-                    <!--
-                        1. CoffeeScript generiert was du erwartest, keine Überraschungen
-
-                        2. der Output ist lesbar, debugbar
-
-                        3. solltest du weg wollen von CoffeeScript, schnapp dir das JS...
-                            3.1 Der Weg zurück wird nie verbaut
-                            3.2 Anders als bei z.b. GWT
-                    -->
+                    <aside class="notes">
+                        <ul>
+                            <li>Ich mag keine Überraschungen</li>
+                            <li>1. CoffeeScript generiert was du erwartest, keine Überraschungen</li>
+                            <li>2. der Output ist lesbar, debugbar</li>
+                            <li>
+                                3. solltest du weg wollen von CoffeeScript, schnapp dir das JS...
+                                <ul>
+                                    <li>3.1 Der Weg zurück wird nie verbaut
+                                    <li>3.2 Anders als bei z.b. GWT
+                                </ul>
+                            </li>
+                        </ul>
+                    </aside>
                 </section>
             </div>
 
@@ -596,23 +625,67 @@ $(document).ready(function() {
                     <h3>
                         will work in every<br/> JavaScript runtime, ...
                     </h3>
-                    <!--
-                        Ecmascript 5?
-                        IE 6 ist kein Problem
-                    -->
+                    <aside class="notes">
+                        <ul>
+                            <li>Ecmascript 5?</li>
+                            <li>IE 6 ist kein Problem</li>
+                            <li>kein problem auch optimiertes js zu embedden - solltet ihr was schnelleres finden ... :)</li>
+                        </ul>
+                    </aside>
                 </section>
             </div>
 
             <div class="slides">
                 <section>
                     <h3>
-                        ... and tends to run as fast or faster<br/> than the equivalent handwritten JavaScript.
+                        ... and tends to run as fast or faster<br/> than the equivalent <br/>handwritten JavaScript.
                     </h3>
-                    <!--
-                        1. Optimiert nicht auf den Browser
-                            1. GWT macht dies z.b.
-                        2. wollt ihr z.b. forEach, map o. etc. nutzen, tut es.
-                    -->
+                    <aside class="notes">
+                        <ul>
+                            <li>
+                                Kein ASM.js
+                            </li>
+                            <li>
+                                Glaubensfrage.
+                            </li>
+                            <li>
+                                1. Optimiert nicht auf den Browser
+                                <ul>
+                                    <li>1. GWT macht dies z.b.</li>
+                                </ul>
+                            </li>
+                            <li>
+                            2. wollt ihr z.b. forEach, map o. etc. nutzen, tut es.
+                            </li>
+                        </ul>
+                    </aside>
+                </section>
+            </div>
+
+            <div class="slides">
+                <section>
+                    <h3>
+                        ASM.js for speed
+                    </h3>
+                    <h3>
+                        GWT for nerds working @google
+                    </h3>
+                    <h3>
+                        Dart for hipsters
+                    </h3>
+                    <h3>
+                        JavaScript for runtime
+                    </h3>
+                    <h3>
+                        CoffeeScript for humans (and PHP dev's :))
+                    </h3>
+                    <aside class="notes">
+                        <ul>
+                            <li>
+                                JS ist hölle für jede Runtime, nur google hat interesse dran ...
+                            </li>
+                        </ul>
+                    </aside>
                 </section>
             </div>
 
@@ -638,10 +711,14 @@ add(someInt, add(someInt, 5));
                             <div class="res"></div>
                         </div>
                     </div>
+                    <aside class="notes">
+                        <ul>
+                            <li>just translate</li>
+                            <li>kaskadierte funktion</li>
+                            <li>auf die klammern achten</li>
+                        </ul>
+                    </aside>
 				</section>
-                <!--
-                    just translate
-                -->
             </div>
 
             <div class="slides">
@@ -664,19 +741,20 @@ x(greeter, ["Andy", "Mario", "..."]).join ', '
                             <div class="res"></div>
                         </div>
                     </div>
-                    <!--
-                        1. Code sieht komisch aus?
-
-                        2. Return Statement hinzufügen!
-
-                        3. wo ist der unterschied?
-
-                        4. letztes Statement wird returnt!
-                            for hat eine return value!
-                            ein array!
-
-                        5. wir sammeln alle rückgabewerte des Callbacks!
-                    -->
+                    <aside class="notes">
+                        <ul>
+                            <li>1. Code sieht komisch aus?</li>
+                            <li>2. Return Statement hinzufügen!</li>
+                            <li>3. wo ist der unterschied?</li>
+                            <li>
+                                4. letztes Statement wird returnt!</li>
+                                <ul>
+                                    <li>for hat eine return value!</li>
+                                    <li>ein array!</li>
+                                </ul>
+                            <li>5. wir sammeln alle rückgabewerte des Callbacks!</li>
+                        </ul>
+                    </aside>
                 </section>
             </div>
 
@@ -695,11 +773,13 @@ names().join ', '
                             <div class="code"></div>
                             <div class="res"></div>
                         </div>
-                        <!--
-                            Beispiel return Value der Collection von names.
-                        -->
-                    </div>
 
+                    </div>
+                    <aside class="notes">
+                        <ul>
+                            <li>Beispiel return Value der Collection von names.</li>
+                        </ul>
+                    </aside>
                 </section>
             </div>
 
@@ -721,9 +801,23 @@ $('meta')
                             <div class="res"></div>
                         </div>
                     </div>
-                    <!--
-                        Einfaches map and reduce Beispiel
-                    -->
+                    <aside class="notes">
+                        <ul>
+                            <li>Einfaches map and reduce Beispiel</li>
+                        </ul>
+                    </aside>
+                </section>
+            </div>
+
+            <div class="slides">
+                <section>
+                    <img src="img/jeremy.png">
+                    <aside class="notes">
+                        <ul>
+                            <li>underscore js ist auch von jeremy</li>
+                            <li>funktional geht natürlich immer :)</li>
+                        </ul>
+                    </aside>
                 </section>
             </div>
 
@@ -741,19 +835,21 @@ $('some_selector').css({top: 42, left: 42})
                             <div class="res"></div>
                         </div>
                     </div>
-                    <!--
-                        Objektsyntax
-
-                        .css top: 42, left: 42
-
-                        oder
-
-                        .css
-                            top: 42
-                            left: 42
-
-                        korrigiert jegliche komma's
-                    -->
+                    <aside class="notes">
+                        <ul>
+                            <li>Objektsyntax</li>
+                            <li>.css top: 42, left: 42</li>
+                            <li>oder</li>
+                            <li>
+                                .css
+                                <ul>
+                                   <li>top: 42</li>
+                                   <li>left: 42</li>
+                                </ul>
+                            </li>
+                            <li>korrigiert jegliche komma's</li>
+                            </ul>
+                        </aside>
                 </section>
             </div>
 
@@ -779,9 +875,11 @@ $.ajax
                             <div class="res"></div>
                         </div>
                     </div>
-                    <!--
-                        Wenn ihr es in { und } schreibt, dann geht auf "url" anstelle von url: url
-                    -->
+                    <aside class="notes">
+                        <ul>
+                            <li>Wenn ihr es in { und } schreibt, dann geht auf "url" anstelle von url: url</li>
+                        </ul>
+                    </aside>
                 </section>
             </div>
 
@@ -809,10 +907,12 @@ x 38
                             <div class="res"></div>
                         </div>
                     </div>
+                    <aside class="notes">
+                        <ul>
+                            <li>Switch hat einen Rückgabewert</li>
+                        </ul>
+                    </aside>
                 </section>
-                <!--
-                    Switch hat einen Rückgabewert
-                -->
             </div>
 
             <div class="slides">
@@ -834,26 +934,25 @@ x 38
                             <div class="res"></div>
                         </div>
                     </div>
+                    <aside class="notes">
+                        <ul>
+                            <li>alternative Schreibweise um mit Switch zu arbeiten</li>
+                        </ul>
+                    </aside>
                 </section>
-                <!--
-                    alternative Schreibweise um mit Switch zu arbeiten
-                -->
             </div>
 
 
             <div class="slides">
                 <section>
                     <h2>CoffeeScript in the wild</h2>
+                    <aside class="notes">
+                        <ul>
+                            <li>ich hatte im vorfeld mal gefragt</li>
+                            <li>1. Praxisnahe Beispiele sollten es sein :)</li>
+                        </ul>
+                    </aside>
                 </section>
-
-                <!--
-
-                ich hatte im vorfeld mal gefragt
-
-                1. Praxisnahe Beispiele sollten es sein :)
-
-
-                -->
             </div>
 
 
@@ -871,16 +970,18 @@ $('#dialog').dialog()
                             <div class="res"></div>
                         </div>
                     </div>
+                    <aside class="notes">
+                        <ul>
+                            <li>wie man unten sieht, valides CoffeeScript</li>
+                            <li>Eklig sowas,</li>
+                            <li>Singleton, keine Architektur</li>
+                            <li>- Just works -</li>
+                            <li>nicht wartbar?</li>
+                            <li>Wir sind Architekten :)</li>
+                        </ul>
+                    </aside>
+
                 </section>
-
-                <!--
-                    Eklig sowas,
-                    Singleton, keine Architektur
-                    - Just works -
-                    Wir sind Architekten :)
-
-                    ... aber idt ja kein vortrag zu frontend design ... :)
-                -->
             </div>
 
 
@@ -908,15 +1009,25 @@ var a = (function() {
                             <div class="res"></div>
                         </div>
                     </div>
+                    <aside class="notes">
+                        <ul>
+                            <li>wer scheibt sowas in JavaScript?</li>
+                        </ul>
+                    </aside>
                 </section>
-                <!--
 
-                -->
             </div>
 
             <div class="slides">
                 <section>
                     <h2>a bit oop</h2>
+                    <aside class="notes">
+                        <ul>
+                            <li>wer schreibt oop JavaScript?</li>
+                            <li>warum nicht?</li>
+                            <li>oop ist performant!</li>
+                        </ul>
+                    </aside>
                 </section>
             </div>
 
@@ -938,6 +1049,20 @@ class a
                             <div class="res"></div>
                         </div>
                     </div>
+                    <aside class="notes">
+                        <ul>
+                            <li>CoffeeScript kann klassen</li>
+                            <li>Class.create war der grund für prototypeJS</li>
+                            <li>
+                                wer findet rechts übersichtlicher?
+                                <ul>
+                                    <li>
+                                        wer von denen will mich nur ärgern?
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </aside>
                 </section>
             </div>
 
@@ -960,13 +1085,12 @@ class a
                             <div class="res"></div>
                         </div>
                     </div>
-
-                    <!--
-
-                     constructor  (@foo): ->
-                     constructor  (@foo = "bar"): ->
-
-                    -->
+                    <aside class="notes">
+                        <ul>
+                            <li>constructor  (@foo): -></li>
+                            <li>constructor  (@foo = "bar"): -></li>
+                        </ul>
+                    </aside>
                 </section>
             </div>
 
@@ -991,11 +1115,11 @@ class a
                         </div>
                     </div>
 
-                    <!--
-
-                     typisches Beispiel für getter und setter
-
-                    -->
+                    <aside class="notes">
+                        <ul>
+                            <li>typisches Beispiel für getter und setter</li>
+                        </ul>
+                    </aside>
                 </section>
             </div>
 
@@ -1020,16 +1144,15 @@ class a
                             <div class="res"></div>
                         </div>
                     </div>
+                    <aside class="notes">
+                        <ul>
+                            <li>1. ein wenig vergewaltigt</li>
 
-                    <!--
+                            <li>2. zeigt was möglich ist</li>
 
-                     1. ein wenig vergewaltigt
-
-                     2. zeigt was möglich ist
-
-                     3. womöglich mitm servicelocator ganz interessant ^^
-
-                    -->
+                            <li>3. womöglich mitm servicelocator ganz interessant ^^</li>
+                        </ul>
+                    </aside>
                 </section>
             </div>
 
@@ -1051,9 +1174,11 @@ a.foo()
                         </div>
                     </div>
                 </section>
-                <!--
-                    Statische Funktionen
-                -->
+                <aside class="notes">
+                    <ul>
+                        <li>Statische Funktionen</li>
+                    </ul>
+                </aside>
             </div>
 
 
@@ -1077,16 +1202,15 @@ class b extends a
                             <div class="res"></div>
                         </div>
                     </div>
+                    <aside class="notes">
+                        <ul>
+                            <li>1. klassische vererbung</li>
+                            <li>2. extends wird nur einmalig embedded</li>
+                            <li>3. performant, nur statische methoden werden kopiert</li>
+                            <li>4. klasse die extended wird muss vorhanden sein.</li>
+                        </ul>
+                    </aside>
                 </section>
-                <!--
-                    1. klassische vererbung
-
-                    2. extends wird nur einmalig embedded
-
-                    3. performant, nur statische methoden werden kopiert
-
-                    4. klasse die extended wird muss vorhanden sein.
-                -->
             </div>
 
 
@@ -1173,31 +1297,27 @@ class main
             <div class="slides">
                 <section>
                     <img src="img/phpstorm_fileWatcher.png"/>
+                    <aside class="notes">
+                        <ul>
+                            <li>1. wer kennt phpstorm file watcher?</li>
+                            <li>2. wer nutzt diese?</li>
+                        </ul>
+                    </aside>
                 </section>
-                <!--
-                    1. wer kennt phpstorm file watcher?
-
-                    2. wer nutzt diese?
-
-
-
-                -->
             </div>
 
             <div class="slides">
                 <section>
                     <img src="img/phpstorm_fileWatcher_bare.png"/>
+                    <aside class="notes">
+                        <ul>
+                            <li>--bare</li>
+                            <li>1. Standadmäßig packt Coffeescript alles in eine anonyme funktion</li>
+                            <li>Best Practice</li>
+                            <li>Keine Probleme mit dem Scope</li>
+                        </ul>
+                    </aside>
                 </section>
-                <!--
-                    --bare
-
-                    1. Standadmäßig packt Coffeescript alles in eine anonyme funktion
-
-                    2. Best Practice
-
-                    2. Keine Probleme mit dem Scope
-
-                -->
             </div>
 
             <div class="slides">
@@ -1210,27 +1330,31 @@ class main
             <div class="slides">
                 <section>
                     <img src="img/kannste_so_machen.png"/>
+                    <aside class="notes">
+                        <ul>
+                            <li>
+                                1. Welche Probleme treten auf?
+                                <ul>
+                                    <li>jede Datei liegt einzelnt da</li>
+                                    <li>.map wird nicht geinlinent</li>
+                                </ul>
+                            </li>
+                            <li>Chaos im Dateisystem</li>
+                        </ul>
+                    </aside>
                 </section>
-                <!--
-
-                    1. Welche Probleme treten auf?
-                        1. jede Datei liegt einzelnt da
-                        2. .map wird nicht geinlinent
-
-                    Chaos im Dateisystem
-
-               -->
             </div>
 
             <div class="slides">
                 <section>
                     <img src="img/vim.png"/>
+                    <aside class="notes">
+                        <ul>
+                            <li>Abhängigkeit zu PHPStorm</li>
+                            <li>Abhängigkeiten sind schlecht!</li>
+                        </ul>
+                    </aside>
                 </section>
-                <!--
-                    Abhängigkeit zu PHPStorm
-
-                    Abhängigkeiten sind schlecht!
-                -->
             </div>
 
 
@@ -1239,15 +1363,14 @@ class main
                 <section>
                     <img src="img/git.png"/><br/>
                     <img src="img/jenkins.png"/>
+                    <aside class="notes">
+                        <ul>
+                            <li>1. wir wollen Continuous Integration!</li>
+                            <li>2. Continuous deployment</li>
+                            <li>3. Jemand Push't und die Magie nimmt ihren Lauf</li>
+                        </ul>
+                    </aside>
                 </section>
-                <!--
-
-                    1. wir wollen Continuous Integration!
-
-                    2. Continuous deployment
-
-                    3. Jemand Push't und die Magie nimmt ihren Lauf
-                -->
             </div>
 
             <div class="slides">
@@ -1261,15 +1384,14 @@ class main
             <div class="slides">
                 <section>
                     <img src="img/coffee-h.png"/>
+                    <aside class="notes">
+                        <ul>
+                            <li>CoffeeScript selbst ansehen</li>
+                            <li>-c COMPILE!</li>
+                            <li>-o DORECTORY!</li>
+                        </ul>
+                    </aside>
                 </section>
-
-                <!--
-                    CoffeeScript selbst ansehen
-
-                    -c COMPILE!
-                    -o DORECTORY!
-
-                -->
             </div>
 
             <div class="slides">
@@ -1309,21 +1431,25 @@ hello!! folks
                     </pre>
                     </div>
                 </section>
-                <!--
+                <aside class="notes">
+                    <ul>
+                        <li>
+                            1. Wer schreibt Makefiles?
+                            <ul>
+                                <li>1.1 Organisierte Bash Skripte</li>
+                                <li>1.2 ich mag sie :)</li>
+                            </ul>
+                        </li>
+                        <li>2. rufen wir "make run" auf</li>
 
-                    1. Wer schreibt Makefiles?
-                        1.1 Organisierte Bash Skripte
-                        1.2 ich mag sie :)
+                        <li>3. output des Skriptes.</li>
 
-                    2. rufen wir "make run" auf
-
-                    3. output des Skriptes.
-
-                    4. alle Sourcen sind im Repo!
+                        <li>4. alle Sourcen sind im Repo!</li>
 
 
-                    -b bare, -j join, -c compile, -o out
-                -->
+                        <li>-b bare, -j join, -c compile, -o out</li>
+                    </ul>
+                </aside>
 
             </div>
 
@@ -1336,10 +1462,13 @@ hello!! folks
             <div class="slides">
                 <section>
                     <h2>gut?</h2>
+
+                    <aside class="notes">
+                        <ul>
+                            <li>1. Reihenfolge muss explizit angegeben werden</li>
+                        </ul>
+                    </aside>
                 </section>
-                <!--
-                    1. Reihenfolge muss explizit angegeben werden
-                -->
             </div>
 
 
