@@ -1087,8 +1087,9 @@ class a
                     </div>
                     <aside class="notes">
                         <ul>
-                            <li>constructor  (@foo): -></li>
-                            <li>constructor  (@foo = "bar"): -></li>
+                            <li>Konstruktor</li>
+                            <li>parameter  (@foo): -></li>
+                            <li>parameter mit default werten  (@foo = "bar"): -></li>
                         </ul>
                     </aside>
                 </section>
@@ -1118,6 +1119,12 @@ class a
                     <aside class="notes">
                         <ul>
                             <li>typisches Beispiel für getter und setter</li>
+                            <li>
+                                keine private variablen
+                                <ul>
+                                    <li>Könnt natürlich drum rum bauen</li>
+                                </ul>
+                            </li>
                         </ul>
                     </aside>
                 </section>
@@ -1151,6 +1158,8 @@ class a
                             <li>2. zeigt was möglich ist</li>
 
                             <li>3. womöglich mitm servicelocator ganz interessant ^^</li>
+
+                            <li>4. parameterreihenfolge</li>
                         </ul>
                     </aside>
                 </section>
@@ -1177,6 +1186,12 @@ a.foo()
                 <aside class="notes">
                     <ul>
                         <li>Statische Funktionen</li>
+                        <li>
+                            Statische Funktionen gibt es in JS nicht
+                            <ul>
+                                <li>werden kopiert beim extends</li>
+                            </ul>
+                        </li>
                     </ul>
                 </aside>
             </div>
@@ -1237,12 +1252,26 @@ class a
                             <div class="res"></div>
                         </div>
                     </div>
+                    <aside class="notes">
+                        <ul>
+                            <li>1. wo ist das Problem?</li>
+                            <li>2. => fat arrow</li>
+                            <li>bei funktion</li>
+                            <li>bei funktionsdeklaration</li>
+                        </ul>
+                    </aside>
                 </section>
             </div>
 
             <div class="slides">
                 <section>
                     <h2>real world application</h2>
+                    <aside class="notes">
+                        <ul>
+                            <li>natürlich im kleinen</li>
+                            <li>beispiele liegen der Präsentation bei</li>
+                        </ul>
+                    </aside>
                 </section>
             </div>
 
@@ -1283,6 +1312,12 @@ class main
                             <div class="res"></div>
                         </div>
                     </div>
+                    <aside class="notes">
+                        <ul>
+                            <li>werfen nur ein blick ins bootstrapping</li>
+                            <li>getContainer und Handle sind teil des HttpKernelInterfaces</li>
+                        </ul>
+                    </aside>
                 </section>
             </div>
 
