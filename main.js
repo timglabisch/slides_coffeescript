@@ -124,7 +124,14 @@
 
   })();
 
+  $(window).resize(function() {
+    try {
+      return $(document.currentSlide).find('.code').height($(window).height() - 50);
+    } catch (_error) {}
+  });
+
   Reveal.addEventListener('slidechanged', function() {
+    document.currentSlide = arguments[0].currentSlide;
     try {
       document.editor.destroy();
     } catch (_error) {}

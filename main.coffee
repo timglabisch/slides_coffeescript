@@ -90,8 +90,12 @@ class editor
     @evalEditor()
 
 
+$(window).resize ->
+  try $(document.currentSlide).find('.code').height($( window ).height() - 50)
+
 Reveal.addEventListener 'slidechanged',  ->
 
+  document.currentSlide = arguments[0].currentSlide
   try document.editor.destroy()
 
   $(arguments[0].currentSlide).find('.editor').each (i, el) ->
